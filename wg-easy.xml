@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>wg-easy</Name>
+  <Repository>ghcr.io/wg-easy/wg-easy</Repository>
+  <Registry>https://ghcr.io/wg-easy/wg-easy</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>The easiest way to run WireGuard VPN + Web-based Admin UI.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:51821]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/redeven/docker-templates/master/images/wireguard.png</Icon>
+  <ExtraParams>--cap-add NET_ADMIN --cap-add SYS_MODULE --sysctl net.ipv4.ip_forward=1 --sysctl net.ipv4.conf.all.src_valid_mark=1</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1735768638</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WireGuard Port" Target="51820" Default="51820" Mode="udp" Description="" Type="Port" Display="always" Required="true" Mask="false">51820</Config>
+  <Config Name="WebUI Port" Target="51821" Default="51821" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">51821</Config>
+  <Config Name="Host IP/domain" Target="WG_HOST" Default="" Mode="" Description="Host IP or domain to which the clients will connect" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Password Hash" Target="PASSWORD_HASH" Default="" Mode="" Description="When set, requires a password when logging in to the Web UI.&#13;&#10;See https://github.com/wg-easy/wg-easy/blob/master/How_to_generate_an_bcrypt_hash.md" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="App Data" Target="/etc/wireguard" Default="/mnt/user/appdata/wg-easy" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/wg-easy</Config>
+  <Config Name="Default DNS" Target="WG_DEFAULT_DNS" Default="" Mode="" Description="Default DNS that will be passed to the clients for domain name resolution" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <TailscaleStateDir/>
+</Container>
